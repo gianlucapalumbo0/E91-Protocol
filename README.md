@@ -1,1 +1,8 @@
-Course on Quantum Technology for Security
+The project consists of the implementation of the E91 (Ekert 1991) protocol for **Quantum Key Distribution (QKD)**. The protocol involves Alice and Bob sharing pairs of entangled photons to establish a cryptographic key. Any attempt by an eavesdropper to intercept the communication causes the quantum state to collapse, introducing a disturbance that can be detected. The security of the system does not rely on the computational difficulty of a mathematical problem, but directly on the fundamental laws of quantum physics.
+
+For the implementation, **NetSquid**, a quantum network simulator, was used to model three network nodes: Alice, Bob, and Eve, with Eve acting as an intermediate node that intercepts the qubits during transmission. Furthermore, an optical fiber channel affected by depolarizing noise and losses was simulated in order to approximate more realistic communication conditions.
+
+The presence of quantum correlations between the photons is verified through the **CHSH test**, which is used to evaluate the violation of Bell's inequality and thus confirm the non-classical behavior of the system.
+
+For the random generation of measurement bases, **Qiskit** was also integrated with **IBM Quantum** through a Quantum Random Number Generator (QRNG). Specifically, the quantum noise is obtained from a real QPU through IBM's cloud service, while the execution of the circuit takes place locally. This hybrid approach combines the authenticity of randomness derived from a real quantum device with the absence of waiting times typically associated with running complete workloads on remote quantum hardware.
+
